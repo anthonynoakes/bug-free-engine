@@ -7,7 +7,7 @@ angular.
     templateUrl: 'phone-list/phone-list.template.html',
     controller: function PhoneListController($http) {
       var self = this;
-      self.orderProp = 'age';
+      self.orderProp = 'total';
 
       var promises = []
 	  
@@ -37,17 +37,15 @@ function fillPlayerMedalData(player, medals) {
 		var metaData = medals.find(medal => medal.name == team.name);
 		
 		if(metaData) {
-			team.total = team.tier == "C" ? metaData.total * 5 : metaData.total;
+			team.total = metaData.total;
 			team.metaData = metaData;
-		} else {
-			var x = team;
 		}
 	})
 }
 
 function calculateTotal(player) {
 	var total = 0;
-	player.teams.forEach(team => total+=team.total)
+	player.teams.forEach(team => total+= team.tier == "C" ? team.total * 5 : team.total)
 	return total;
 }
 
