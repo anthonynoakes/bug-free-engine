@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Anthony",
+        "teams": [
+            {
+                "name": "United States", 
+                "tier": "A"
+            }, 
+            {
+                "name": "Israel", 
+                "tier": "A"
+            },
+            {
+                "name": "Bahamas", 
+                "tier": "A"
+            },
+            {
+                "name": "Turkey", 
+                "tier": "B"
+            },
+            {
+                "name": "Slovenia", 
+                "tier": "B"
+            },
+            {
+                "name": "Thailand", 
+                "tier": "B"
+            },
+            {
+                "name": "Trinidad & Tobago", 
+                "tier": "B"
+        }]
+    }
+]
