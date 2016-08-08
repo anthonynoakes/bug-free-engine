@@ -28,7 +28,254 @@
             },
             {
                 "name": "Trinidad & Tobago", 
-                "tier": "B"
+                "tier": "C"
         }]
+    },
+	{
+        "name": "Steve",
+        "teams": [
+            {
+                "name": "Great Britain", 
+                "tier": "A"
+            }, 
+            {
+                "name": "Canada", 
+                "tier": "A"
+            },
+            {
+                "name": "Cuba", 
+                "tier": "A"
+            },
+            {
+                "name": "South Africa", 
+                "tier": "A"
+            },
+            {
+                "name": "Croatia", 
+                "tier": "B"
+            },
+            {
+                "name": "Slovakia", 
+                "tier": "B"
+            },
+            {
+                "name": "Belgium", 
+                "tier": "B"
+			},
+            {
+                "name": "Tunisia", 
+                "tier": "C"
+            }
+		]
+    },
+	{
+        "name": "Mar",
+        "teams": [
+            {
+                "name": "China", 
+                "tier": "A"
+            }, 
+            {
+                "name": "Sweden", 
+                "tier": "A"
+            },
+            {
+                "name": "Jamaica", 
+                "tier": "A"
+            },
+            {
+                "name": "Ethiopia", 
+                "tier": "B"
+            },
+            {
+                "name": "Colombia", 
+                "tier": "B"
+            },
+            {
+                "name": "Norway", 
+                "tier": "B"
+			},
+            {
+                "name": "Finland", 
+                "tier": "C"
+            }
+		]
+    },
+	{
+        "name": "Tyler",
+        "teams": [
+            {
+                "name": "Germany", 
+                "tier": "A"
+            }, 
+            {
+                "name": "Brazil", 
+                "tier": "A"
+            },
+            {
+                "name": "Hungary", 
+                "tier": "A"
+            },
+            {
+                "name": "Serbia", 
+                "tier": "A"
+            },
+            {
+                "name": "Romania", 
+                "tier": "B"
+            },
+            {
+                "name": "Lithuania", 
+                "tier": "B"
+            },
+            {
+                "name": "Mexico", 
+                "tier": "B"
+			},
+            {
+                "name": "Estonia", 
+                "tier": "C"
+            }
+		]
+    },{
+        "name": "Alecs",
+        "teams": [
+            {
+                "name": "Japan", 
+                "tier": "A"
+            }, 
+            {
+                "name": "Italy", 
+                "tier": "A"
+            },
+            {
+                "name": "Kazakhstan", 
+                "tier": "A"
+            },
+            {
+                "name": "Azerbaijan", 
+                "tier": "A"
+            },
+            {
+                "name": "Denmark", 
+                "tier": "B"
+            },
+            {
+                "name": "Chinese Taipei", 
+                "tier": "B"
+            },
+            {
+                "name": "Greece", 
+                "tier": "B"
+			},
+            {
+                "name": "Indonesia", 
+                "tier": "C"
+            }
+		]
+    },{
+        "name": "Pat",
+        "teams": [
+            {
+                "name": "France", 
+                "tier": "A"
+            }, 
+            {
+                "name": "South Korea", 
+                "tier": "A"
+            },
+            {
+                "name": "New Zealand", 
+                "tier": "A"
+            },
+            {
+                "name": "Belarus", 
+                "tier": "A"
+            },
+            {
+                "name": "Iran", 
+                "tier": "B"
+            },
+            {
+                "name": "Bulgaria", 
+                "tier": "B"
+            },
+            {
+                "name": "Vietnam", 
+                "tier": "B"
+			},
+            {
+                "name": "Malaysia", 
+                "tier": "C"
+            }
+		]
+    },{
+        "name": "Matt",
+        "teams": [
+            {
+                "name": "Australia", 
+                "tier": "A"
+            }, 
+            {
+                "name": "Netherlands", 
+                "tier": "A"
+            },
+            {
+                "name": "Ukraine", 
+                "tier": "A"
+            },
+            {
+                "name": "Poland", 
+                "tier": "A"
+            },
+            {
+                "name": "Czech Republic", 
+                "tier": "B"
+            },
+            {
+                "name": "Switzerland", 
+                "tier": "B"
+            },
+            {
+                "name": "Egypt", 
+                "tier": "B"
+			},
+            {
+                "name": "Armenia", 
+                "tier": "C"
+            }
+		]
+    },{
+        "name": "Nick",
+        "teams": [
+            {
+                "name": "Russia", 
+                "tier": "A"
+            }, 
+            {
+                "name": "Spain", 
+                "tier": "A"
+            },
+            {
+                "name": "Kenya", 
+                "tier": "A"
+            },
+            {
+                "name": "Mongolia", 
+                "tier": "B"
+            },
+            {
+                "name": "India", 
+                "tier": "B"
+            },
+            {
+                "name": "Ireland", 
+                "tier": "B"
+			},
+            {
+                "name": "Portugal", 
+                "tier": "C"
+            }
+		]
     }
 ]

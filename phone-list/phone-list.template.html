@@ -3,16 +3,17 @@
     <div class="col-md-2">
       <!--Sidebar content-->
 
-      <p>
+      <!-- <p>
         Search:
         <input ng-model="$ctrl.query" />
-      </p>
+      </p> -->
 
       <p>
         Sort by:
         <select ng-model="$ctrl.orderProp">
           <option value="name">Alphabetical</option>
           <option value="age">Newest</option>
+		  <option value="total">Medal Count</option>
         </select>
       </p>
 
@@ -21,12 +22,19 @@
       <!--Body content-->
 
       <ul class="phones">
-        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-          <span>{{phone.name}}</span>
-          <p>{{phone.snippet}}</p>
+        <li ng-repeat="player in $ctrl.players | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+          <span>{{player.name}}</span>
+          <p># of Countries: {{player.teams.length}}</p>
+		  <p># of Medals: {{player.total}}</p>
         </li>
       </ul>
 
     </div>
   </div>
+  
+  <table border="1" ng-repeat="player in players">
+	  <tr>
+		  <th ng-repeat="column in table.cols">{{column}}</th>
+	  </tr>
+  </table>
 </div>
