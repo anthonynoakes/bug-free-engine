@@ -5,29 +5,38 @@ angular.
   module('phoneList').
   component('phoneList', {
     templateUrl: 'phone-list/phone-list.template.html',
-    controller: function PhoneListController($http) {
+    controller: function PhoneListController($scope, $q, $http) {
       var self = this;
-      self.orderProp = 'total';
+	  self.lastUpdated = "loading..";
+      //self.orderProp = 'total';
 
       var promises = []
 	  
 	  promises.push($http.get('players/players.json').then(function(response) {
-        self.players = response.data;
+        self.players = response.data; //self.players = response.data;
+		return self.players
       }));
      
       promises.push($http.get('medals/medals.json').then(function(response) {
-        self.medals = response.data;
+        return response.data; //self.medals = response.data;
       }));
 
       Promise.all(promises).then(values => {  
+		var players = values[0];
+		var medals = values[1];
+		
+		var date = new Date(medals.lastUpdated);
+		self.lastUpdated = date.toLocaleTimeString();
+		
 		// Fill in meta data
-		self.players.forEach(player => {
+		players.forEach(player => {
 			// search medals for each 
-			fillPlayerMedalData(player, self.medals.medals);
+			fillPlayerMedalData(player, medals.medals);
 			player.total = calculateTotal(player)
 		})
 		
-		
+		self.players = createViewModel(players).sort((a,b) => a.total < b.total);
+		$scope.$apply();
       });
   }
 });
@@ -47,6 +56,40 @@ function calculateTotal(player) {
 	var total = 0;
 	player.teams.forEach(team => total+= team.tier == "C" ? team.total * 5 : team.total)
 	return total;
+}
+
+// playerVm
+// Name
+// image
+// total
+// Tier A
+// Tier B
+// Tier C
+
+// Tier 
+// Name
+// Medals
+
+function createViewModel(players){
+	var a = [];
+	
+	players.forEach(player => {
+		var x = {
+			name: player.name,
+			total: player.total,
+			tierA: filterTiers("A", player.teams),
+			tierB: filterTiers("B", player.teams),
+			tierC: filterTiers("C", player.teams)
+		}
+		
+		a.push(x)
+	})
+	
+	return a;
+}
+
+function filterTiers(tier, teams) {
+	return teams.filter(team => team.tier == tier)
 }
 
 
