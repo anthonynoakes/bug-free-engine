@@ -73,7 +73,7 @@ function calculateTotal(player) {
 function createViewModel(players){
 	var a = [];
 	
-	players.forEach(function(playe) {
+	players.forEach(function(player) {
 		var x = {
 			name: player.name,
 			total: player.total,
