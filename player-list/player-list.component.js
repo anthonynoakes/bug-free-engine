@@ -21,7 +21,7 @@ angular.
         return response.data; //self.medals = response.data;
       }));
 
-      Promise.all(promises).then(values => {  
+      Promise.all(promises).then(function(values) {  
 		var players = values[0];
 		var medals = values[1];
 		
@@ -29,21 +29,21 @@ angular.
 		self.lastUpdated = date.toLocaleTimeString();
 		
 		// Fill in meta data
-		players.forEach(player => {
+		players.forEach(function(player) {
 			// search medals for each 
 			fillPlayerMedalData(player, medals.medals);
 			player.total = calculateTotal(player)
 		})
 		
-		self.players = createViewModel(players).sort((a,b) => a.total < b.total);
+		self.players = createViewModel(players).sort(function(a,b) { a.total < b.total });
 		$scope.$apply();
       });
   }
 });
 
 function fillPlayerMedalData(player, medals) {
-	player.teams.forEach(team => {
-		var metaData = medals.find(medal => medal.name == team.name);
+	player.teams.forEach(function(team) {
+		var metaData = medals.find(function(medal) { medal.name == team.name });
 		
 		if(metaData) {
 			team.total = metaData.total;
@@ -54,7 +54,7 @@ function fillPlayerMedalData(player, medals) {
 
 function calculateTotal(player) {
 	var total = 0;
-	player.teams.forEach(team => total+= team.tier == "C" ? team.total * 5 : team.total)
+	player.teams.forEach(function(team) { total+= team.tier == "C" ? team.total * 5 : team.total })
 	return total;
 }
 
@@ -73,7 +73,7 @@ function calculateTotal(player) {
 function createViewModel(players){
 	var a = [];
 	
-	players.forEach(player => {
+	players.forEach(function(playe) {
 		var x = {
 			name: player.name,
 			total: player.total,
@@ -89,7 +89,7 @@ function createViewModel(players){
 }
 
 function filterTiers(tier, teams, min) {
-	var t = teams.filter(team => team.tier == tier) || [];
+	var t = teams.filter(function(team) { team.tier == tier }) || [];
 	
 	while(t.length < min) {
 		t.push(null);
