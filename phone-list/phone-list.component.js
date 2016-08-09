@@ -77,9 +77,9 @@ function createViewModel(players){
 		var x = {
 			name: player.name,
 			total: player.total,
-			tierA: filterTiers("A", player.teams),
-			tierB: filterTiers("B", player.teams),
-			tierC: filterTiers("C", player.teams)
+			tierA: filterTiers("A", player.teams, 4),
+			tierB: filterTiers("B", player.teams, 3),
+			tierC: filterTiers("C", player.teams, 1)
 		}
 		
 		a.push(x)
@@ -88,8 +88,14 @@ function createViewModel(players){
 	return a;
 }
 
-function filterTiers(tier, teams) {
-	return teams.filter(team => team.tier == tier)
+function filterTiers(tier, teams, min) {
+	var t = teams.filter(team => team.tier == tier) || [];
+	
+	while(t.length < min) {
+		t.push(null);
+	}
+	
+	return t;
 }
 
 

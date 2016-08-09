@@ -10,49 +10,32 @@
 			<th>Tier B</th>
 			<th>Tier B</th>
 			<th>Tier B</th>
-			<th>Tier C</th>
+			<th>Tier C x 5</th>
 		</tr>
 		<tr ng-repeat="player in $ctrl.players">
-			<td>{{player.name}}</td>
+			<td>{{player.name}}
+				<br/><img style="width: 30px" ng-src="{{player.tierA[0].metaData.flag}}">
+			</td>
 			<td style="font-size: 30px">{{player.total}}</td> 
-			<td>{{player.tierA[0].name}}
+			<td ng-repeat="tier in player.tierA">
+				<!-- <img style="width: 22px" ng-src="{{tier.metaData.flag}}"><br/> -->
+				{{tier.name}}
 				<div style="text-align: center;">
-					<span style="font-size: 20px">{{player.tierA[0].total}}</span>
+					<span style="font-size: 25px">{{tier.total}}</span>
 				</div>
 			</td>
-			<td>{{player.tierA[1].name}}
+			<td ng-repeat="tier in player.tierB">
+				<!-- <img style="width: 22px" ng-src="{{tier.metaData.flag}}"><br/> -->
+				{{tier.name}}
 				<div style="text-align: center;">
-					<span style="font-size: 20px">{{player.tierA[1].total}}</span>
+					<span style="font-size: 25px">{{tier.total}}</span>
 				</div>
 			</td>
-			<td>{{player.tierA[2].name}}
+			<td ng-repeat="tier in player.tierC">
+				<!-- <img style="width: 22px" ng-src="{{tier.metaData.flag}}"><br/> -->
+				{{tier.name}}
 				<div style="text-align: center;">
-					<span style="font-size: 20px">{{player.tierA[2].total}}</span>
-				</div>
-			</td>
-			<td>{{player.tierA[3].name}}
-				<div style="text-align: center;">
-					<span style="font-size: 20px">{{player.tierA[3].total}}</span>
-				</div>
-			</td> {{player.tierA[3].total}}</td>
-			<td>{{player.tierB[0].name}}
-				<div style="text-align: center;">
-					<span style="font-size: 20px">{{player.tierB[0].total}}</span>
-				</div>
-			</td>
-			<td>{{player.tierB[1].name}}
-				<div style="text-align: center;">
-					<span style="font-size: 20px">{{player.tierB[1].total}}</span>
-				</div>
-			</td>
-			<td>{{player.tierB[2].name}} 
-				<div style="text-align: center;">
-					<span style="font-size: 20px">{{player.tierB[2].total}}</span>
-				</div>
-			</td>
-			<td>{{player.tierC[0].name}} 
-				<div style="text-align: center;">
-					<span style="font-size: 20px">{{player.tierC[0].total}}</span>
+					<span style="font-size: 25px">{{tier.total}}</span>
 				</div>
 			</td>
 		</tr>
