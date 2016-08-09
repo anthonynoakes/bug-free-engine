@@ -35,7 +35,7 @@ angular.
 			player.total = calculateTotal(player)
 		})
 		
-		self.players = createViewModel(players).sort(function(a,b) { a.total < b.total });
+		self.players = createViewModel(players).sort(function(a,b) { return a.total < b.total });
 		$scope.$apply();
       });
   }
@@ -43,7 +43,7 @@ angular.
 
 function fillPlayerMedalData(player, medals) {
 	player.teams.forEach(function(team) {
-		var metaData = medals.find(function(medal) { medal.name == team.name });
+		var metaData = medals.find(function(medal) { return medal.name == team.name });
 		
 		if(metaData) {
 			team.total = metaData.total;
@@ -54,7 +54,7 @@ function fillPlayerMedalData(player, medals) {
 
 function calculateTotal(player) {
 	var total = 0;
-	player.teams.forEach(function(team) { total+= team.tier == "C" ? team.total * 5 : team.total })
+	player.teams.forEach(function(team) { total+= team.tier == "C" ? team.total * 5 : team.total })	
 	return total;
 }
 
@@ -89,7 +89,7 @@ function createViewModel(players){
 }
 
 function filterTiers(tier, teams, min) {
-	var t = teams.filter(function(team) { team.tier == tier }) || [];
+	var t = teams.filter(function(team) { return team.tier == tier }) || [];
 	
 	while(t.length < min) {
 		t.push(null);
