@@ -37,6 +37,7 @@ angular.
 		
 		self.players = createViewModel(players).sort(function(a,b) { return a.total < b.total ? 1 : a.total > b.total ? -1 : 0});
 		$scope.$apply();
+		alert("Winner winner chicken dinner");
       });
   }
 });
